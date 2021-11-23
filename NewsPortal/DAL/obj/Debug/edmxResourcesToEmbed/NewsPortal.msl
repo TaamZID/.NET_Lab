@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NewsPortalModelStoreContainer" CdmEntityContainer="NewsPortalEntities2">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="NewsPortalModel.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="A_id" ColumnName="A_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="NewsPortalModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="N_id" ColumnName="N_id" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="NewsPortalModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="U_id" ColumnName="U_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
