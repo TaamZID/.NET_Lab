@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="APPLY_TABLE">
+    <Key>
+      <PropertyRef Name="MEMID" />
+    </Key>
+    <Property Name="PID" Type="Int32" Nullable="false" />
+    <Property Name="MEMID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PSTATE" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="AID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COMPLETE_TABLE">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PNAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PSTATUS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONFIRM_TABLE">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PNAME" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MEMID" Type="Int32" Nullable="false" />
+    <Property Name="SUPID" Type="Int32" Nullable="false" />
+    <Property Name="PSTATE" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MEM_LOG_TABLE">
+    <Key>
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="MID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MNAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MPASSWORD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRO_TABLE">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PNAME" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PSTATE" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PCATEGORY" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SUP_LOG_TABLE">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SNAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SPASSWORD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="projectManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="APPLY_TABLE" EntityType="Self.APPLY_TABLE" />
+    <EntitySet Name="COMPLETE_TABLE" EntityType="Self.COMPLETE_TABLE" />
+    <EntitySet Name="CONFIRM_TABLE" EntityType="Self.CONFIRM_TABLE" />
+    <EntitySet Name="MEM_LOG_TABLE" EntityType="Self.MEM_LOG_TABLE" />
+    <EntitySet Name="PRO_TABLE" EntityType="Self.PRO_TABLE" />
+    <EntitySet Name="SUP_LOG_TABLE" EntityType="Self.SUP_LOG_TABLE" />
+  </EntityContainer>
+</Schema>

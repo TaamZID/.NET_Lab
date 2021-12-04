@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="projectManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="APPLY_TABLE">
+          <Key>
+            <PropertyRef Name="MEMID" />
+          </Key>
+          <Property Name="PID" Type="int" Nullable="false" />
+          <Property Name="MEMID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PSTATE" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="AID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COMPLETE_TABLE">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PNAME" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="PSTATUS" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CONFIRM_TABLE">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PNAME" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="MEMID" Type="int" Nullable="false" />
+          <Property Name="SUPID" Type="int" Nullable="false" />
+          <Property Name="PSTATE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MEM_LOG_TABLE">
+          <Key>
+            <PropertyRef Name="MID" />
+          </Key>
+          <Property Name="MID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MNAME" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="MPASSWORD" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRO_TABLE">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PNAME" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="PSTATE" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="PCATEGORY" Type="nchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUP_LOG_TABLE">
+          <Key>
+            <PropertyRef Name="SID" />
+          </Key>
+          <Property Name="SID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SNAME" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SPASSWORD" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="projectManagementModelStoreContainer">
+          <EntitySet Name="APPLY_TABLE" EntityType="Self.APPLY_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COMPLETE_TABLE" EntityType="Self.COMPLETE_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONFIRM_TABLE" EntityType="Self.CONFIRM_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MEM_LOG_TABLE" EntityType="Self.MEM_LOG_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRO_TABLE" EntityType="Self.PRO_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUP_LOG_TABLE" EntityType="Self.SUP_LOG_TABLE" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="projectManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="APPLY_TABLE">
+          <Key>
+            <PropertyRef Name="MEMID" />
+          </Key>
+          <Property Name="PID" Type="Int32" Nullable="false" />
+          <Property Name="MEMID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PSTATE" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="AID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COMPLETE_TABLE">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PNAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PSTATUS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CONFIRM_TABLE">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PNAME" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MEMID" Type="Int32" Nullable="false" />
+          <Property Name="SUPID" Type="Int32" Nullable="false" />
+          <Property Name="PSTATE" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MEM_LOG_TABLE">
+          <Key>
+            <PropertyRef Name="MID" />
+          </Key>
+          <Property Name="MID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MNAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MPASSWORD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRO_TABLE">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PNAME" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PSTATE" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PCATEGORY" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUP_LOG_TABLE">
+          <Key>
+            <PropertyRef Name="SID" />
+          </Key>
+          <Property Name="SID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SNAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SPASSWORD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="projectManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="APPLY_TABLE" EntityType="Self.APPLY_TABLE" />
+          <EntitySet Name="COMPLETE_TABLE" EntityType="Self.COMPLETE_TABLE" />
+          <EntitySet Name="CONFIRM_TABLE" EntityType="Self.CONFIRM_TABLE" />
+          <EntitySet Name="MEM_LOG_TABLE" EntityType="Self.MEM_LOG_TABLE" />
+          <EntitySet Name="PRO_TABLE" EntityType="Self.PRO_TABLE" />
+          <EntitySet Name="SUP_LOG_TABLE" EntityType="Self.SUP_LOG_TABLE" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="projectManagementModelStoreContainer" CdmEntityContainer="projectManagementEntities">
+          <EntitySetMapping Name="APPLY_TABLE">
+            <EntityTypeMapping TypeName="projectManagementModel.APPLY_TABLE">
+              <MappingFragment StoreEntitySet="APPLY_TABLE">
+                <ScalarProperty Name="PID" ColumnName="PID" />
+                <ScalarProperty Name="MEMID" ColumnName="MEMID" />
+                <ScalarProperty Name="PSTATE" ColumnName="PSTATE" />
+                <ScalarProperty Name="AID" ColumnName="AID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMPLETE_TABLE">
+            <EntityTypeMapping TypeName="projectManagementModel.COMPLETE_TABLE">
+              <MappingFragment StoreEntitySet="COMPLETE_TABLE">
+                <ScalarProperty Name="PID" ColumnName="PID" />
+                <ScalarProperty Name="PNAME" ColumnName="PNAME" />
+                <ScalarProperty Name="PSTATUS" ColumnName="PSTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONFIRM_TABLE">
+            <EntityTypeMapping TypeName="projectManagementModel.CONFIRM_TABLE">
+              <MappingFragment StoreEntitySet="CONFIRM_TABLE">
+                <ScalarProperty Name="PID" ColumnName="PID" />
+                <ScalarProperty Name="PNAME" ColumnName="PNAME" />
+                <ScalarProperty Name="MEMID" ColumnName="MEMID" />
+                <ScalarProperty Name="SUPID" ColumnName="SUPID" />
+                <ScalarProperty Name="PSTATE" ColumnName="PSTATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEM_LOG_TABLE">
+            <EntityTypeMapping TypeName="projectManagementModel.MEM_LOG_TABLE">
+              <MappingFragment StoreEntitySet="MEM_LOG_TABLE">
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="MNAME" ColumnName="MNAME" />
+                <ScalarProperty Name="MPASSWORD" ColumnName="MPASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRO_TABLE">
+            <EntityTypeMapping TypeName="projectManagementModel.PRO_TABLE">
+              <MappingFragment StoreEntitySet="PRO_TABLE">
+                <ScalarProperty Name="PID" ColumnName="PID" />
+                <ScalarProperty Name="PNAME" ColumnName="PNAME" />
+                <ScalarProperty Name="PSTATE" ColumnName="PSTATE" />
+                <ScalarProperty Name="PCATEGORY" ColumnName="PCATEGORY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUP_LOG_TABLE">
+            <EntityTypeMapping TypeName="projectManagementModel.SUP_LOG_TABLE">
+              <MappingFragment StoreEntitySet="SUP_LOG_TABLE">
+                <ScalarProperty Name="SID" ColumnName="SID" />
+                <ScalarProperty Name="SNAME" ColumnName="SNAME" />
+                <ScalarProperty Name="SPASSWORD" ColumnName="SPASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

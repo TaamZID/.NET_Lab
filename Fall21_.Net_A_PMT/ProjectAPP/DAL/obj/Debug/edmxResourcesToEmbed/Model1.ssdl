@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="APPLY_TABLE">
+    <Key>
+      <PropertyRef Name="MEMID" />
+    </Key>
+    <Property Name="PID" Type="int" Nullable="false" />
+    <Property Name="MEMID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PSTATE" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="AID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COMPLETE_TABLE">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PNAME" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="PSTATUS" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONFIRM_TABLE">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PNAME" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="MEMID" Type="int" Nullable="false" />
+    <Property Name="SUPID" Type="int" Nullable="false" />
+    <Property Name="PSTATE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MEM_LOG_TABLE">
+    <Key>
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="MID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MNAME" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="MPASSWORD" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRO_TABLE">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PNAME" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="PSTATE" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="PCATEGORY" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SUP_LOG_TABLE">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SNAME" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="SPASSWORD" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="projectManagementModelStoreContainer">
+    <EntitySet Name="APPLY_TABLE" EntityType="Self.APPLY_TABLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMPLETE_TABLE" EntityType="Self.COMPLETE_TABLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONFIRM_TABLE" EntityType="Self.CONFIRM_TABLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MEM_LOG_TABLE" EntityType="Self.MEM_LOG_TABLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRO_TABLE" EntityType="Self.PRO_TABLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUP_LOG_TABLE" EntityType="Self.SUP_LOG_TABLE" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
