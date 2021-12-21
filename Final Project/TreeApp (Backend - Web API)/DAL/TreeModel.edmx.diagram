@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="72954ee9d6e24325b7541fa4e6279904" Name="Diagram1">
+        <EntityTypeShape EntityType="tree_plantation_dbModel.admin" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.assigned" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.assignedtask" Width="1.5" PointX="8" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.assignment" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.authentication" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.donation" Width="1.5" PointX="8" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.donor" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.request" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.task" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.Token" Width="1.5" PointX="8" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.tree" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.User" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="tree_plantation_dbModel.volunteer" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="tree_plantation_dbModel.FK_assigneds_volunteers" ManuallyRouted="false" />
+        <AssociationConnector Association="tree_plantation_dbModel.FK_assignedtasks_users" ManuallyRouted="false" />
+        <AssociationConnector Association="tree_plantation_dbModel.FK_donations_donors" ManuallyRouted="false" />
+        <AssociationConnector Association="tree_plantation_dbModel.FK_requests_volunteers" ManuallyRouted="false" />
+        <AssociationConnector Association="tree_plantation_dbModel.FK_tasks_volunteers" ManuallyRouted="false" />
+        <AssociationConnector Association="tree_plantation_dbModel.FK_Tokens_Tokens" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

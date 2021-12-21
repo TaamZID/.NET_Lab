@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.records {
+	
+	justify-content: center;
+    width:400px;
+	margin: 0 auto;
+	height:5em;
+}
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.editbtn {background-color: #008CBA;} /* Blue */
+.deletebtn {background-color: #f44336;} /* Red */
+</style>
+</head>
+<body>
+
+<div class="topnav" style="text-align: center;">
+    <a class="" href="#!addTree">Plant Tree</a>
+    <a href="#!trees">Show Trees</a>
+    <a href="#!submiTask">Submit Task</a>
+    <a href="#!assignment">Completed Task</a>
+    <a href="#!records">Records</a>
+    <a href="#!users">Planter Profile</a>
+    <a href="#!login">Logout</a>
+</div>
+
+<div style="padding-left:16px">
+  <h2></h2>
+  <p></p>
+</div>
+
+</body>
+</html>
+<div class="container" >
+    <h2 style="text-align: center;">Show Records</h2>
+    <br>
+    <div class="records">
+        <input type="text" placeholder="Search by Month" class="form-control" ng-model="search" />
+        <br>
+        <div class="col-md-12 text-center">
+        <button ng-click="Search()" class="btn btn-primary btn-sm">Search</button>
+        <br>
+        </div>
+    </div>
+    <br> <br> <br>
+      <table class="table table-bordered">
+        <tr style="text-align: center;">
+          <th>ID</th>
+          <th>Name</th>
+          <th>Variant</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Planted Month</th>
+        </tr>
+        <tr ng-repeat="p in trees">
+            <td>{{p.T_Id}}</td>
+            <td>{{p.T_Name}}</td>
+            <td>{{p.T_Variant}}</td>
+            <td>{{p.T_Price}}</td>
+            <td>{{p.T_Quantity}}</td>
+            <td>{{p.Time}}</td>
+        </tr>
+      </table>
+</div>
